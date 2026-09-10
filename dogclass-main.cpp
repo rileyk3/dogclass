@@ -48,6 +48,19 @@ private:                   // begin private section
 	string dogName;        // private member 
 }; //don't forget semi-colon with C++ classes!!
 
+//my idea to overload the << operator (actually ended up working!!)
+ostream& operator<<(ostream& out, const Dog& dog) {
+	out << "  .-\"-." << endl;
+	out << " /|6 6|\\" << endl;
+	out << "{/(_0_)\\}" << endl;
+	out << " _/ ^ \\_" << endl;
+	out << "(/ /^\\ \\)-'" << endl;
+	out << " \"\"' '\"\" " << endl;
+	out << "   " << dog.getName() << "\n" << endl;
+
+	return out;
+}
+
 
 int main() {
 	char stopme;
@@ -62,7 +75,8 @@ int main() {
 
 	Dog lassiedog("Lassie"); //uses constructor
 	cout << endl;
-	lassiedog.show();
+	//lassiedog.show();
+	cout << lassiedog; //this works now
 
 	cin >> stopme;  //holds console open in some cases
 	return 0;
